@@ -5,7 +5,7 @@ import ContactFormInput from './ContactFormInput.jsx';
 import ContactFormInlineInput from './ContactFormInlineInput.jsx';
 
 const H2 = styled.h2`
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 `;
 
@@ -17,16 +17,16 @@ const ContactFormDiv = styled.div`
 const Label = styled.label`
   display: block;
   font-weight: bold;
-  width: 90%;
-  margin 0 auto;
+  width: 95%;
+  margin 10px auto;
 `;
 
 const TextArea = styled.textarea`
   display: block;
-  width: 90%;
+  width: 95%;
   font-size: 14px;
   line-height: 21px;
-  margin auto;
+  margin 10px auto;
 `;
 
 const DivFloat = styled.div`
@@ -34,14 +34,28 @@ const DivFloat = styled.div`
 `;
 
 const PromoDiv = styled.div`
-  width: 90%;
-  margin: auto;
+  width: 95%;
+  margin: 10px auto;
 `;
 
 const SubmitButton = styled.button`
-  width: 90%;
-  margin: 0 auto;
+  width: 95%;
+  padding: 7px 14px;
+  font-size: 14px;
+  margin: 10px auto;
   display: block;
+  color: white;
+  background-color: rgb(232, 118, 0);
+  line-height: 21px;
+  box-shadow: rgb(0, 0, 0, 0.1);
+  border-bottom-left-radius: 3.5px;
+  border-bottom-right-radius: 3.5px;
+  border-top-left-radius: 3.5px;
+  border-top-right-radius: 3.5px;
+`;
+
+const Input = styled.input`
+  margin-right: 20px;
 `;
 
 const ContactForm = ({ year, make, model, price }) => {
@@ -108,7 +122,7 @@ const ContactForm = ({ year, make, model, price }) => {
         />
         <PromoDiv>
           <DivFloat>
-            <input type="checkbox" name="contactCheckbox"></input>
+            <Input type="checkbox" name="contactCheckbox"></Input>
           </DivFloat>
           <div>
             Yes, I would like to receive updates, promotions, and discounts

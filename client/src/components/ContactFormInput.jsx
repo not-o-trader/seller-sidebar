@@ -3,17 +3,17 @@ import styled from 'styled-components';
 
 const Label = styled.label`
   font-weight: bold;
-  width: 90%;
+  width: 95%;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
 `;
 
 const Input = styled.input`
   display: block;
-  width: 90%;
+  width: 95%;
   font-size: 14px;
   line-height: 21px;
-  margin: 0 auto;
+  margin: 10px auto;
 `;
 
 const Optional = styled.small`

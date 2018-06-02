@@ -8,6 +8,7 @@ import ContactForm from './ContactForm.jsx';
 
 const SidebarDiv = styled.div`
   max-width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
 `;
 
 class Sidebar extends React.Component {

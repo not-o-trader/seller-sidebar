@@ -7,6 +7,11 @@ const SellerInfoDiv = styled.div`
   margin-bottom: 15px;
 `;
 
+const InnerDiv = styled.div`
+  width: 95%;
+  margin: 0 auto;
+`;
+
 const BoldP = styled.p`
   font-weight: bold;
 `;
@@ -14,24 +19,26 @@ const BoldP = styled.p`
 const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) => {
   return (
     <SellerInfoDiv>
-      {logo && <img src={logo} alt={name} />}
-      <h2>{name}</h2>
-      <div>
-        <BoldP>{phone}</BoldP>
-      </div>
-      <div>
-        <p>{address} {city}, {state} {zip}</p>
-      </div>
-      <div>
-        <p>
-          <a href="#">View our inventory</a>
-        </p>
-      </div>
-      <div>
-        <p>
-          <a href="#">Visit Dealer Website</a>
-        </p>
-      </div>
+      <InnerDiv>
+        {logo && <img src={logo} alt={name} />}
+        <h2>{name}</h2>
+        <div>
+          <BoldP>{phone}</BoldP>
+        </div>
+        <div>
+          <p>{address} {city}, {state} {zip}</p>
+        </div>
+        <div>
+          <p>
+            <a href="#">View our inventory</a>
+          </p>
+        </div>
+        <div>
+          <p>
+            <a href="#">Visit Dealer Website</a>
+          </p>
+        </div>
+      </InnerDiv>
     </SellerInfoDiv>
   );
 };
