@@ -31,8 +31,8 @@ class VehiclePrice extends React.Component {
           </div>
           <div>
             <p>
-              <FinancingLink href='#'>$ Arrange Financing <span className="glyphicon glyphicon-share"></span></FinancingLink> 
-              <PaymentsLink href='#'><span className="glyphicon glyphicon-modal-window"></span> Calculate payment</PaymentsLink>
+              <FinancingLink href='#'>$ Arrange Financing <span className="fas fa-external-link-alt"></span></FinancingLink> 
+              <PaymentsLink href='#'><span className="fas fa-calculator"></span> Calculate payment</PaymentsLink>
             </p>
           </div>
         </InnerDiv>

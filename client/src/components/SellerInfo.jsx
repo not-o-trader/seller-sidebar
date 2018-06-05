@@ -47,7 +47,7 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
         <div>
           <DivFloat>
             <a href={mapsLink}>
-              <span className="glyphicon">&#xe062;</span>
+              <span className="fas fa-map-marker-alt"></span>
             </a>
           </DivFloat>
           <div>
@@ -65,10 +65,9 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
         </div>
         <div>
           <p>
-            <a href={website}>
-              <SellerButton>Visit Dealer Website <span className="glyphicon glyphicon-share"></span></SellerButton>
-            </a>
-            {/* <a href="#">Visit Dealer Website</a> */}
+            <SellerButton>
+              <a href={website}>Visit Dealer Website <span className="fas fa-external-link-alt"></span></a>
+            </SellerButton>
           </p>
         </div>
       </InnerDiv>
