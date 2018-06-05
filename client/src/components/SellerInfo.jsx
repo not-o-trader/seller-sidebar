@@ -16,7 +16,14 @@ const BoldP = styled.p`
   font-weight: bold;
 `;
 
+const DivFloat = styled.div`
+  float: left;
+  margin-right: 10px;
+`;
+
 const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) => {
+  const mapsAddr = `${address}, ${city}, ${state} ${zip}`;
+  const mapsLink = `https://maps.google.com/maps/place/${mapsAddr}`;
   return (
     <SellerInfoDiv>
       <InnerDiv>
@@ -26,7 +33,18 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
           <BoldP>{phone}</BoldP>
         </div>
         <div>
-          <p>{address} {city}, {state} {zip}</p>
+          <DivFloat>
+            <a href={mapsLink}>
+              <span className="glyphicon">&#xe062;</span>
+            </a>
+          </DivFloat>
+          <div>
+            <p>
+              <a href={mapsLink}>
+                {address} {city}, {state} {zip}
+              </a>
+            </p>
+          </div>
         </div>
         <div>
           <p>
