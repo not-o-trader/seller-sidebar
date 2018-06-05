@@ -6,6 +6,14 @@ const InnerDiv = styled.div`
   margin: 0 auto;
 `;
 
+const FinancingLink = styled.a`
+  margin-right: 10px;
+`;
+
+const PaymentsLink = styled.a`
+  float: right;
+`;
+
 class VehiclePrice extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +23,7 @@ class VehiclePrice extends React.Component {
     return (
       <div>
         <InnerDiv>
-          <div>{this.props.price}</div>
+          <h3>{this.props.price}</h3>
           <div>
             <p>
               <a href='#'>Is this in the fair market range?</a>
@@ -23,7 +31,8 @@ class VehiclePrice extends React.Component {
           </div>
           <div>
             <p>
-              <a href='#'>$ Arrange Financing</a> <a href='#'>Calculate payment</a>
+              <FinancingLink href='#'>$ Arrange Financing <span className="glyphicon glyphicon-share"></span></FinancingLink> 
+              <PaymentsLink href='#'><span className="glyphicon glyphicon-modal-window"></span> Calculate payment</PaymentsLink>
             </p>
           </div>
         </InnerDiv>

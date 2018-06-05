@@ -21,6 +21,18 @@ const DivFloat = styled.div`
   margin-right: 10px;
 `;
 
+const SellerButton = styled.button`
+  width: 95%;
+  font-size: 14px;
+  display: block;
+  line-height: 21px;
+  box-shadow: rgb(0, 0, 0, 0.1);
+  border-bottom-left-radius: 3.5px;
+  border-bottom-right-radius: 3.5px;
+  border-top-left-radius: 3.5px;
+  border-top-right-radius: 3.5px;
+`;
+
 const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) => {
   const mapsAddr = `${address}, ${city}, ${state} ${zip}`;
   const mapsLink = `https://maps.google.com/maps/place/${mapsAddr}`;
@@ -53,7 +65,10 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
         </div>
         <div>
           <p>
-            <a href="#">Visit Dealer Website</a>
+            <a href={website}>
+              <SellerButton>Visit Dealer Website <span className="glyphicon glyphicon-share"></span></SellerButton>
+            </a>
+            {/* <a href="#">Visit Dealer Website</a> */}
           </p>
         </div>
       </InnerDiv>
