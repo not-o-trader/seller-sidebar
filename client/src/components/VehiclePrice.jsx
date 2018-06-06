@@ -14,6 +14,14 @@ const PaymentsLink = styled.a`
   float: right;
 `;
 
+const KBBDiv = styled.div`
+  float: left;
+`;
+
+const FMRDiv = styled.div`
+  margin: auto 0;
+`;
+
 class VehiclePrice extends React.Component {
   constructor(props) {
     super(props);
@@ -25,9 +33,12 @@ class VehiclePrice extends React.Component {
         <InnerDiv>
           <h3>{this.props.price}</h3>
           <div>
-            <p>
-              <a href='#'>Is this in the fair market range?</a>
-            </p>
+            <KBBDiv>
+              <img src="KBB_Badge.png" />
+            </KBBDiv>
+            <FMRDiv>
+              <a href='#'>Is this price in the Fair Market Range?</a>
+            </FMRDiv>
           </div>
           <div>
             <p>
