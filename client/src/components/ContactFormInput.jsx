@@ -20,7 +20,7 @@ const Optional = styled.small`
   color: grey;
 `;
 
-const ContactFormInput = ({ name, label, type, placeholder, optional }) => {
+const ContactFormInput = ({ name, label, type, placeholder, optional, value, handleChange }) => {
   return (
     <div>
       <div className="form-group">
@@ -31,6 +31,8 @@ const ContactFormInput = ({ name, label, type, placeholder, optional }) => {
           name={name}
           type={type}
           placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
         >
         </Input>
       </div>

@@ -15,6 +15,7 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.sendSellerEmail = this.sendSellerEmail.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +30,17 @@ class Sidebar extends React.Component {
       .catch((error) => {
         console.log('Error getting data:', error);
       });
+  }
+
+  sendSellerEmail(data) {
+    const extra = {
+      vehicleId: this.state.vehicleId,
+      sellerEmail: this.state.sellerEmail
+    };
+    data = Object.assign({}, data, extra);
+    axios.post('/api/seller/email', data)
+      .then(res => console.log('Successfully sent email'))
+      .catch(err => console.error('Error sending email:', err));
   }
 
   render() {
@@ -52,6 +64,7 @@ class Sidebar extends React.Component {
           year={this.state.vehicleModelYear}
           email={this.state.sellerEmail}
           price={this.state.vehiclePrice}
+          send={this.sendSellerEmail}
         />
       </SidebarDiv>
     );
