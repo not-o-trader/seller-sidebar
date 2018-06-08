@@ -6,10 +6,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Info = styled.div`
-  font-size: 14px;
-`;
-
 const FinancingLink = styled.a`
   margin-right: 10px;
 `;
@@ -36,7 +32,7 @@ class VehiclePrice extends React.Component {
     return (
       <Wrapper>
         <h3>{this.props.price}</h3>
-        <Info>
+        <div>
           <div>
             <KBB>
               <img src="KBB_Badge.png" />
@@ -51,7 +47,7 @@ class VehiclePrice extends React.Component {
               <PaymentsLink href='#'><span className="fas fa-calculator"></span> Calculate payment</PaymentsLink>
             </p>
           </div>
-        </Info>
+        </div>
       </Wrapper>
     );
   }

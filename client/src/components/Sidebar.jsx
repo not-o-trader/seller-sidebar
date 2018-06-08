@@ -8,7 +8,8 @@ import ContactForm from './ContactForm.jsx';
 
 const Wrapper = styled.div`
   max-width: 100%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.875em;
   a:link, a:visited, a:hover, a:active {
     color: blue;
   }
