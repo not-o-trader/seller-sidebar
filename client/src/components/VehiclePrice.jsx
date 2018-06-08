@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const InnerDiv = styled.div`
+const Wrapper = styled.div`
   width: 95%;
   margin: 0 auto;
+`;
+
+const Info = styled.div`
+  font-size: 14px;
 `;
 
 const FinancingLink = styled.a`
@@ -14,11 +18,12 @@ const PaymentsLink = styled.a`
   float: right;
 `;
 
-const KBBDiv = styled.div`
+const KBB = styled.div`
+  margin-top: -8px;
   float: left;
 `;
 
-const FMRDiv = styled.div`
+const FMR = styled.div`
   margin: auto 0;
 `;
 
@@ -29,16 +34,16 @@ class VehiclePrice extends React.Component {
 
   render() {
     return (
-      <div>
-        <InnerDiv>
-          <h3>{this.props.price}</h3>
+      <Wrapper>
+        <h3>{this.props.price}</h3>
+        <Info>
           <div>
-            <KBBDiv>
+            <KBB>
               <img src="KBB_Badge.png" />
-            </KBBDiv>
-            <FMRDiv>
+            </KBB>
+            <FMR>
               <a href='#'>Is this price in the Fair Market Range?</a>
-            </FMRDiv>
+            </FMR>
           </div>
           <div>
             <p>
@@ -46,8 +51,8 @@ class VehiclePrice extends React.Component {
               <PaymentsLink href='#'><span className="fas fa-calculator"></span> Calculate payment</PaymentsLink>
             </p>
           </div>
-        </InnerDiv>
-      </div>
+        </Info>
+      </Wrapper>
     );
   }
 }

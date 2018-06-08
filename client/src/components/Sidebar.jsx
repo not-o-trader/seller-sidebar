@@ -6,7 +6,7 @@ import VehiclePrice from './VehiclePrice.jsx';
 import SellerInfo from './SellerInfo.jsx';
 import ContactForm from './ContactForm.jsx';
 
-const SidebarDiv = styled.div`
+const Wrapper = styled.div`
   max-width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
 `;
@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <SidebarDiv>
+      <Wrapper>
         <VehiclePrice price={this.state.vehiclePrice} />
         <hr />
         <SellerInfo
@@ -66,7 +66,7 @@ class Sidebar extends React.Component {
           price={this.state.vehiclePrice}
           send={this.sendSellerEmail}
         />
-      </SidebarDiv>
+      </Wrapper>
     );
   }
 }

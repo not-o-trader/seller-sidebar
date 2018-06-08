@@ -1,28 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SellerInfoDiv = styled.div`
+const Wrapper = styled.div`
   background-color: #e6e6e6;
   border: 1px solid #d4d4d4;
   margin-bottom: 15px;
 `;
 
-const InnerDiv = styled.div`
+const Inner = styled.div`
   width: 95%;
   margin: 0 auto;
 `;
 
-const BoldP = styled.p`
+const Phone = styled.p`
   font-weight: bold;
 `;
 
-const DivFloat = styled.div`
+const Float = styled.div`
   float: left;
   margin-right: 10px;
 `;
 
-const SellerButton = styled.button`
-  width: 95%;
+const Button = styled.button`
+  width: 100%;
   font-size: 14px;
   display: block;
   line-height: 21px;
@@ -37,19 +37,19 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
   const mapsAddr = `${address}, ${city}, ${state} ${zip}`;
   const mapsLink = `https://maps.google.com/maps/place/${mapsAddr}`;
   return (
-    <SellerInfoDiv>
-      <InnerDiv>
+    <Wrapper>
+      <Inner>
         {logo && <img src={logo} alt={name} />}
         <h2>{name}</h2>
         <div>
-          <BoldP>{phone}</BoldP>
+          <Phone>{phone}</Phone>
         </div>
         <div>
-          <DivFloat>
+          <Float>
             <a href={mapsLink}>
               <span className="fas fa-map-marker-alt"></span>
             </a>
-          </DivFloat>
+          </Float>
           <div>
             <p>
               <a href={mapsLink}>
@@ -65,13 +65,13 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
         </div>
         <div>
           <p>
-            <SellerButton>
+            <Button>
               <a href={website}>Visit Dealer Website <span className="fas fa-external-link-alt"></span></a>
-            </SellerButton>
+            </Button>
           </p>
         </div>
-      </InnerDiv>
-    </SellerInfoDiv>
+      </Inner>
+    </Wrapper>
   );
 };
 

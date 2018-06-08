@@ -3,45 +3,38 @@ import styled from 'styled-components';
 
 import ContactFormInput from './ContactFormInput.jsx';
 
-const H2 = styled.h2`
+const Wrapper = styled.div`
+  background-color: #e6e6e6;
+  border: 1px solid #d4d4d4;
+  margin-bottom: 15px;
+`;
+
+const Inner = styled.div`
   width: 95%;
   margin: 0 auto;
 `;
 
-const ContactFormDiv = styled.div`
-  background-color: #e6e6e6;
-  border: 1px solid #d4d4d4;
-`;
-
 const Label = styled.label`
   display: block;
+  margin: 10px 0;
   font-weight: bold;
-  width: 95%;
-  margin 10px auto;
 `;
 
 const TextArea = styled.textarea`
+  width: 100%;
   display: block;
-  width: 95%;
   font-size: 14px;
   line-height: 21px;
-  margin 10px auto;
 `;
 
-const DivFloat = styled.div`
+const Float = styled.div`
   float: left;
 `;
 
-const PromoDiv = styled.div`
-  width: 95%;
-  margin: 10px auto;
-`;
-
-const SubmitButton = styled.button`
-  width: 95%;
+const Button = styled.button`
+  width: 100%;
   padding: 7px 14px;
   font-size: 14px;
-  margin: 10px auto;
   display: block;
   color: white;
   background-color: rgb(232, 118, 0);
@@ -115,76 +108,78 @@ class ContactForm extends React.Component {
   render() {
     const placeholder = 'Enter your message here. Maximum 250 characters';
     return (
-      <ContactFormDiv>
-        <H2>Email Seller</H2>
-        <form onSubmit={this.handleSubmit}>
-          <Label htmlFor="message">Message</Label>
-          <TextArea
-            name="message"
-            maxLength={250}
-            rows={8}
-            placeholder={placeholder}
-            value={this.state.message}
-            onChange={this.handleMessageChange}
-          >
-          </TextArea>
-          <ContactFormInput
-            name="firstName"
-            label="First Name"
-            type="text"
-            placeholder="First Name"
-            value={this.state.firstName}
-            handleChange={this.handleFirstNameChange}
-          />
-          <ContactFormInput
-            name="lastName"
-            label="Last Name"
-            type="text"
-            placeholder="Last Name"
-            value={this.state.lastName}
-            handleChange={this.handleLastNameChange}
-          />
-          <ContactFormInput
-            name="emailAddress"
-            label="Email"
-            type="email"
-            placeholder="Email"
-            value={this.state.email}
-            handleChange={this.handleEmailChange}
-          />
-          <ContactFormInput
-            name="phoneNumber"
-            label="Phone Number"
-            type="tel"
-            placeholder=""
-            optional="true"
-            value={this.state.phone}
-            handleChange={this.handlePhoneChange}
-          />
-          <PromoDiv>
-            <DivFloat>
-              <Input
-                type="checkbox"
-                name="contactCheckbox"
-                value={this.state.enroll}
-                onChange={this.handleEnrollChange}
-              >
-              </Input>
-            </DivFloat>
+      <Wrapper>
+        <Inner>
+          <h2>Email Seller</h2>
+          <form onSubmit={this.handleSubmit}>
+            <Label htmlFor="message">Message</Label>
+            <TextArea
+              name="message"
+              maxLength={250}
+              rows={8}
+              placeholder={placeholder}
+              value={this.state.message}
+              onChange={this.handleMessageChange}
+            >
+            </TextArea>
+            <ContactFormInput
+              name="firstName"
+              label="First Name"
+              type="text"
+              placeholder="First Name"
+              value={this.state.firstName}
+              handleChange={this.handleFirstNameChange}
+            />
+            <ContactFormInput
+              name="lastName"
+              label="Last Name"
+              type="text"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              handleChange={this.handleLastNameChange}
+            />
+            <ContactFormInput
+              name="emailAddress"
+              label="Email"
+              type="email"
+              placeholder="Email"
+              value={this.state.email}
+              handleChange={this.handleEmailChange}
+            />
+            <ContactFormInput
+              name="phoneNumber"
+              label="Phone Number"
+              type="tel"
+              placeholder=""
+              optional="true"
+              value={this.state.phone}
+              handleChange={this.handlePhoneChange}
+            />
             <div>
-              Yes, I would like to receive updates, promotions, and discounts
-              from Not-O-Trader and their affiliates.
+              <Float>
+                <Input
+                  type="checkbox"
+                  name="contactCheckbox"
+                  value={this.state.enroll}
+                  onChange={this.handleEnrollChange}
+                >
+                </Input>
+              </Float>
+              <div>
+                Yes, I would like to receive updates, promotions, and discounts
+                from Not-O-Trader and their affiliates.
+              </div>
             </div>
-          </PromoDiv>
-          <PromoDiv>
-            <p>
-              By using this service, you accept the terms of
-              our Visitor Agreement
-            </p>
-          </PromoDiv>
-          <SubmitButton type="submit">Submit</SubmitButton>
-        </form>
-      </ContactFormDiv>
+            <div>
+              <p>
+                By using this service, you accept the terms of
+                our Visitor Agreement
+              </p>
+            </div>
+            <Button type="submit">Submit</Button>
+          </form>
+        </Inner>
+      </Wrapper>
     );  
   }
 }
