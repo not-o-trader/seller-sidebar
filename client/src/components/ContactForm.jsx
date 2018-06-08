@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ContactFormInput from './ContactFormInput.jsx';
-import ContactFormInlineInput from './ContactFormInlineInput.jsx';
 
 const H2 = styled.h2`
   width: 95%;
