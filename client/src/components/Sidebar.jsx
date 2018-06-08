@@ -8,7 +8,10 @@ import ContactForm from './ContactForm.jsx';
 
 const Wrapper = styled.div`
   max-width: 100%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  a:link, a:visited, a:hover, a:active {
+    color: blue;
+  }
 `;
 
 class Sidebar extends React.Component {
