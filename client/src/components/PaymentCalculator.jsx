@@ -39,6 +39,7 @@ const CloseButton = styled.button`
 const MonthsButton = styled.button`
   color: ${props => props.selected ? 'white' : 'blue'};
   background-color: ${props => props.selected ? 'blue' : 'white'};
+  outline-width: 0;
 `;
 
 const ResetButton = styled.button`
