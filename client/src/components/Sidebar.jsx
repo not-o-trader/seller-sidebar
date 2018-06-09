@@ -7,7 +7,8 @@ import SellerInfo from './SellerInfo.jsx';
 import ContactForm from './ContactForm.jsx';
 
 const Wrapper = styled.div`
-  max-width: 100%;
+  min-width: 350px;
+  max-width: 450px;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.875em;
   a:link, a:visited, a:hover, a:active {
