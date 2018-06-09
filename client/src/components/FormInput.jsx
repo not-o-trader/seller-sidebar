@@ -19,7 +19,7 @@ const Optional = styled.small`
   color: grey;
 `;
 
-const ContactFormInput = ({ name, label, type, placeholder, optional, value, handleChange }) => {
+const FormInput = ({ name, label, type, placeholder, optional, value, handleChange }) => {
   return (
     <div>
       <div className="form-group">
@@ -39,4 +39,4 @@ const ContactFormInput = ({ name, label, type, placeholder, optional, value, han
   );
 };
 
-export default ContactFormInput;
+export default FormInput;

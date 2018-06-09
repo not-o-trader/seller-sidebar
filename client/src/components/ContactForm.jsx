@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ContactFormInput from './ContactFormInput.jsx';
+import FormInput from './FormInput.jsx';
 
 const Wrapper = styled.div`
   background-color: #e6e6e6;
@@ -122,7 +122,7 @@ class ContactForm extends React.Component {
               onChange={this.handleMessageChange}
             >
             </TextArea>
-            <ContactFormInput
+            <FormInput
               name="firstName"
               label="First Name"
               type="text"
@@ -130,7 +130,7 @@ class ContactForm extends React.Component {
               value={this.state.firstName}
               handleChange={this.handleFirstNameChange}
             />
-            <ContactFormInput
+            <FormInput
               name="lastName"
               label="Last Name"
               type="text"
@@ -138,7 +138,7 @@ class ContactForm extends React.Component {
               value={this.state.lastName}
               handleChange={this.handleLastNameChange}
             />
-            <ContactFormInput
+            <FormInput
               name="emailAddress"
               label="Email"
               type="email"
@@ -146,7 +146,7 @@ class ContactForm extends React.Component {
               value={this.state.email}
               handleChange={this.handleEmailChange}
             />
-            <ContactFormInput
+            <FormInput
               name="phoneNumber"
               label="Phone Number"
               type="tel"
@@ -180,7 +180,7 @@ class ContactForm extends React.Component {
           </form>
         </Inner>
       </Wrapper>
-    );  
+    );
   }
 }
 
