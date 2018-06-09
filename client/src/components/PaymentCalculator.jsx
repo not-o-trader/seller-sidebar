@@ -94,8 +94,8 @@ class PaymentCalculator extends React.Component {
     const price = props.price || state.price;
     const priceRaw = props.priceRaw || state.priceRaw;
     if (typeof priceRaw === 'number') {
-      const downPayment = priceRaw * 0.2;
-      return Object.assign({}, state, { price, priceRaw, downPayment });
+      // const downPayment = priceRaw * 0.2;
+      return Object.assign({}, state, { price, priceRaw });
     }
     return state;
   }
@@ -109,18 +109,36 @@ class PaymentCalculator extends React.Component {
   handleReset(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.setState(this.initialState);
+    const price = this.props.price || '$0.00';
+    const priceRaw = this.props.priceRaw || 0;
+    const state = Object.assign({}, this.initialState, { price, priceRaw });
+    this.setState(state);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
-    console.error('PaymentCalculator.handleSubmit not implemented');
+    const { priceRaw, downPayment, tradeInValue, amountOwedOnTrade } = this.state;
+    const loan = priceRaw - downPayment - tradeInValue + amountOwedOnTrade;
+    const payment = Math.ceil(loan / this.state.months);
+    // TODO: Interest etc.
+    this.setState({
+      totalFinanced: Math.ceil(loan),
+      totalLoan: Math.ceil(loan), // FIXME
+      estimatedPayment: Math.ceil(payment)
+    });
   }
 
   handleChange(prop, event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    let value = target.type === 'checkbox' ? target.checked : target.value;
+    if (typeof value === 'string') {
+      if (value.match(/^[0-9]*$/)) {
+        value = +value;
+      } else {
+        console.warn(`Non-numeric value entered for ${prop}`);
+      }
+    }
     this.setState({ [prop]: value });
   }
 

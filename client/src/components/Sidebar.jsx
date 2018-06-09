@@ -61,12 +61,12 @@ class Sidebar extends React.Component {
         {this.state.modalActive &&
          <PaymentCalculator
            price={this.state.vehiclePrice}
+           priceRaw={this.state.vehiclePriceRaw}
            toggle={this.toggleModal}
          >
          </PaymentCalculator>}
         <VehiclePrice
           price={this.state.vehiclePrice}
-          priceRaw={this.state.vehiclePriceRaw}
           toggleModal={this.toggleModal}
         />
         <hr />
