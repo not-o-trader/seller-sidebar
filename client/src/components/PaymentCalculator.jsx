@@ -104,23 +104,7 @@ class PaymentCalculator extends React.Component {
     return state;
   }
 
-  handleClose(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.props.toggle();
-  }
-
-  handleReset(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const price = this.props.price || 0;
-    const state = Object.assign({}, this.initialState, { price });
-    this.setState(state);
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    e.stopPropagation();
+  recalculate() {
     const { price, downPayment, tradeInValue, amountOwedOnTrade } = this.state;
     const loan = price - downPayment - tradeInValue + amountOwedOnTrade;
     const payment = Math.ceil(loan / this.state.months);
@@ -130,6 +114,30 @@ class PaymentCalculator extends React.Component {
       totalLoan: Math.ceil(loan), // FIXME
       estimatedPayment: Math.ceil(payment)
     });
+  }
+
+  handleClose(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.toggle();
+  }
+
+  handleReset(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const state = Object.assign({}, this.initialState, {
+      price: this.props.price || 0,
+      totalFinanced: 0,
+      totalLoan: 0,
+      estimatedPayment: 0
+    });
+    this.setState(state, () => this.recalculate());
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.recalculate();
   }
 
   handleChange(prop, event) {
@@ -142,7 +150,7 @@ class PaymentCalculator extends React.Component {
         console.warn(`Non-numeric value entered for ${prop}`);
       }
     }
-    this.setState({ [prop]: value });
+    this.setState({ [prop]: value }, () => this.recalculate());
   }
 
   handleMonthsClick(event) {
