@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import VehiclePrice from './VehiclePrice.jsx';
 import SellerInfo from './SellerInfo.jsx';
 import ContactForm from './ContactForm.jsx';
+import PaymentCalculator from './PaymentCalculator.jsx';
 
 const Wrapper = styled.div`
   min-width: 350px;
@@ -19,8 +20,9 @@ const Wrapper = styled.div`
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { modalActive: false };
     this.sendSellerEmail = this.sendSellerEmail.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -48,10 +50,25 @@ class Sidebar extends React.Component {
       .catch(err => console.error('Error sending email:', err));
   }
 
+  toggleModal() {
+    const active = this.state.modalActive;
+    this.setState({ modalActive: !active });
+  }
+
   render() {
     return (
       <Wrapper>
-        <VehiclePrice price={this.state.vehiclePrice} />
+        {this.state.modalActive &&
+         <PaymentCalculator
+           price={this.state.vehiclePrice}
+           toggle={this.toggleModal}
+         >
+         </PaymentCalculator>}
+        <VehiclePrice
+          price={this.state.vehiclePrice}
+          priceRaw={this.state.vehiclePriceRaw}
+          toggleModal={this.toggleModal}
+        />
         <hr />
         <SellerInfo
           logo={this.state.sellerLogoUrl}

@@ -26,6 +26,12 @@ const FMR = styled.div`
 class VehiclePrice extends React.Component {
   constructor(props) {
     super(props);
+    this.handleCalculatorClick = this.handleCalculatorClick.bind(this);
+  }
+
+  handleCalculatorClick(e) {
+    e.preventDefault();
+    this.props.toggleModal();
   }
 
   render() {
@@ -43,8 +49,10 @@ class VehiclePrice extends React.Component {
           </div>
           <div>
             <p>
-              <FinancingLink href='#'>$ Arrange Financing <span className="fas fa-external-link-alt"></span></FinancingLink> 
-              <PaymentsLink href='#'><span className="fas fa-calculator"></span> Calculate payment</PaymentsLink>
+              <FinancingLink href='#'>$ Arrange Financing <span className="fas fa-external-link-alt"></span></FinancingLink>
+              <PaymentsLink href='#' onClick={this.handleCalculatorClick}>
+                <span className="fas fa-calculator"></span> Calculate payment
+              </PaymentsLink>
             </p>
           </div>
         </div>
