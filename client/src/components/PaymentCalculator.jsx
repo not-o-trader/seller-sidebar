@@ -5,8 +5,13 @@ import { formatMoney } from 'accounting';
 import FormInput from './FormInput.jsx';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: absolute;
+  width: 95%;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   border: 1px solid #d4d4d4;
+  background-color: white;
 `;
 
 const Inner = styled.div`
