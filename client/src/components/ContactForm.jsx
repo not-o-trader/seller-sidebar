@@ -113,7 +113,7 @@ class ContactForm extends React.Component {
       <Wrapper>
         <Inner>
           <h2>Email Seller</h2>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} autoComplete="on">
             <Label htmlFor="message">Message</Label>
             <TextArea
               name="message"
@@ -130,6 +130,7 @@ class ContactForm extends React.Component {
               type="text"
               placeholder="First Name"
               value={this.state.firstName}
+              autocomplete="given-name"
               handleChange={this.handleFirstNameChange}
             />
             <FormInput
@@ -138,6 +139,7 @@ class ContactForm extends React.Component {
               type="text"
               placeholder="Last Name"
               value={this.state.lastName}
+              autocomplete="family-name"
               handleChange={this.handleLastNameChange}
             />
             <FormInput
@@ -146,6 +148,7 @@ class ContactForm extends React.Component {
               type="email"
               placeholder="Email"
               value={this.state.email}
+              autocomplete="email"
               handleChange={this.handleEmailChange}
             />
             <FormInput
@@ -155,6 +158,7 @@ class ContactForm extends React.Component {
               placeholder=""
               optional="true"
               value={this.state.phone}
+              autocomplete="tel"
               handleChange={this.handlePhoneChange}
             />
             <div>

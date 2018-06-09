@@ -19,7 +19,7 @@ const Optional = styled.small`
   color: grey;
 `;
 
-const FormInput = ({ name, label, type, placeholder, optional, value, handleChange }) => {
+const FormInput = ({ name, label, type, placeholder, optional, value, handleChange, autocomplete }) => {
   return (
     <div>
       <div className="form-group">
@@ -31,6 +31,7 @@ const FormInput = ({ name, label, type, placeholder, optional, value, handleChan
           type={type}
           placeholder={placeholder}
           value={value}
+          autoComplete={autocomplete}
           onChange={handleChange}
         >
         </Input>
