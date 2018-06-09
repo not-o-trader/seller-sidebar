@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { formatMoney } from 'accounting';
 
 const Wrapper = styled.div`
   width: 95%;
@@ -37,7 +38,7 @@ class VehiclePrice extends React.Component {
   render() {
     return (
       <Wrapper>
-        <h3>{this.props.price}</h3>
+        <h3>{formatMoney(this.props.price)}</h3>
         <div>
           <div>
             <KBB>

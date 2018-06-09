@@ -10,7 +10,6 @@ const sellersController = {
           vehicleMake: result.vehicle_make,
           vehicleModel: result.vehicle_model,
           vehicleModelYear: result.vehicle_model_year,
-          vehiclePriceRaw: result.vehicle_price_raw,
           vehiclePrice: result.vehicle_price,
           sellerId: result.seller_id,
           sellerName: result.seller_name,

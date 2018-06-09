@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { formatMoney } from 'accounting';
 
 import FormInput from './FormInput.jsx';
 
@@ -75,9 +76,10 @@ class ContactForm extends React.Component {
     if (state && state.message === '') {
       const { year, make, model, price } = props;
       if (year && make && model && price) {
+        const priceStr = formatMoney(price);
         const message = `
         Hi, I'm interested in your ${year} ${make} ${model} listed on Not-O-Trader
-        for ${price}. I'd like to get more information about this vehicle and
+        for ${priceStr}. I'd like to get more information about this vehicle and
         confirm its availability.
         `.trim().replace(/[\n ]+/g, ' ');
         return Object.assign({}, state, { message });

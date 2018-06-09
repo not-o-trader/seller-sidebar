@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { formatMoney } from 'accounting';
 
 import FormInput from './FormInput.jsx';
 
@@ -68,8 +69,7 @@ class PaymentCalculator extends React.Component {
     this.initialState = {
       months: 60,
       interestRate: 0,
-      price: props.price || '$0.00',
-      priceRaw: props.priceRaw || 0,
+      price: props.price || 0,
       downPayment: 0,
       tradeInValue: 0,
       amountOwedOnTrade: 0,
@@ -83,7 +83,7 @@ class PaymentCalculator extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRateChange = this.handleChange.bind(this, 'interestRate');
-    this.handlePriceChange = this.handleChange.bind(this, 'priceRaw');
+    this.handlePriceChange = this.handleChange.bind(this, 'price');
     this.handleDownPaymentChange = this.handleChange.bind(this, 'downPayment');
     this.handleTradeChange = this.handleChange.bind(this, 'tradeInValue');
     this.handleOwedChange = this.handleChange.bind(this, 'amountOwedOnTrade');
@@ -92,10 +92,9 @@ class PaymentCalculator extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     const price = props.price || state.price;
-    const priceRaw = props.priceRaw || state.priceRaw;
-    if (typeof priceRaw === 'number') {
-      // const downPayment = priceRaw * 0.2;
-      return Object.assign({}, state, { price, priceRaw });
+    if (typeof price === 'number') {
+      // const downPayment = price * 0.2;
+      return Object.assign({}, state, { price });
     }
     return state;
   }
@@ -109,17 +108,16 @@ class PaymentCalculator extends React.Component {
   handleReset(e) {
     e.preventDefault();
     e.stopPropagation();
-    const price = this.props.price || '$0.00';
-    const priceRaw = this.props.priceRaw || 0;
-    const state = Object.assign({}, this.initialState, { price, priceRaw });
+    const price = this.props.price || 0;
+    const state = Object.assign({}, this.initialState, { price });
     this.setState(state);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
-    const { priceRaw, downPayment, tradeInValue, amountOwedOnTrade } = this.state;
-    const loan = priceRaw - downPayment - tradeInValue + amountOwedOnTrade;
+    const { price, downPayment, tradeInValue, amountOwedOnTrade } = this.state;
+    const loan = price - downPayment - tradeInValue + amountOwedOnTrade;
     const payment = Math.ceil(loan / this.state.months);
     // TODO: Interest etc.
     this.setState({
@@ -212,7 +210,7 @@ class PaymentCalculator extends React.Component {
               name="price"
               label="Price"
               type="number"
-              value={this.state.priceRaw}
+              value={this.state.price}
               handleChange={this.handlePriceChange}
             />
             <FormInput
@@ -247,31 +245,31 @@ class PaymentCalculator extends React.Component {
             </div>
             <div>
               <p>Price</p>
-              <Calculated>{this.state.price}</Calculated>
+              <Calculated>{formatMoney(this.state.price)}</Calculated>
             </div>
             <div>
               <p>Down Payment</p>
-              <Calculated>- ${this.state.downPayment}</Calculated>
+              <Calculated>- {formatMoney(this.state.downPayment)}</Calculated>
             </div>
             <div>
               <p>Trade-In Value</p>
-              <Calculated>${this.state.tradeInValue}</Calculated>
+              <Calculated>- {formatMoney(this.state.tradeInValue)}</Calculated>
             </div>
             <div>
               <p>Amount Owed on Trade</p>
-              <Calculated>${this.state.amountOwedOnTrade}</Calculated>
+              <Calculated>{formatMoney(this.state.amountOwedOnTrade)}</Calculated>
             </div>
             <div>
               <p>Total Financed</p>
-              <Calculated>${this.state.totalFinanced}</Calculated>
+              <Calculated>{formatMoney(this.state.totalFinanced)}</Calculated>
             </div>
             <div>
               <p>Total Interest</p>
-              <Calculated>${this.state.totalInterest}</Calculated>
+              <Calculated>{formatMoney(this.state.totalInterest)}</Calculated>
             </div>
             <div>
               <p>Total Loan</p>
-              <Calculated>${this.state.totalLoan}</Calculated>
+              <Calculated>{formatMoney(this.state.totalLoan)}</Calculated>
             </div>
             <p>
               *Estimated payments are for informational purposes only and don't
