@@ -123,6 +123,7 @@ class ContactForm extends React.Component {
             >
             </TextArea>
             <ContactFormInput
+              maybeInline
               name="firstName"
               label="First Name"
               type="text"
@@ -131,6 +132,7 @@ class ContactForm extends React.Component {
               handleChange={this.handleFirstNameChange}
             />
             <ContactFormInput
+              maybeInline
               name="lastName"
               label="Last Name"
               type="text"

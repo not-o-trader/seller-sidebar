@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  /*
+  @media (min-width: 500px) {
+    display: ${props => props.maybeInline ? 'inline-block' : 'block'};
+    width: ${props => props.maybeInline ? '250px' : '100%'};
+  }
+  */
+`;
+
 const Label = styled.label`
   font-weight: bold;
   display: block;
@@ -19,9 +28,9 @@ const Optional = styled.small`
   color: grey;
 `;
 
-const ContactFormInput = ({ name, label, type, placeholder, optional, value, handleChange }) => {
+const ContactFormInput = ({ name, label, type, placeholder, optional, value, handleChange, maybeInline }) => {
   return (
-    <div>
+    <Wrapper maybeInline={maybeInline}>
       <div className="form-group">
         <Label htmlFor={name}>
           {label} {optional && <Optional>(Optional)</Optional>}
@@ -35,7 +44,7 @@ const ContactFormInput = ({ name, label, type, placeholder, optional, value, han
         >
         </Input>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
