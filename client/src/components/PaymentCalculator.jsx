@@ -84,7 +84,7 @@ class PaymentCalculator extends React.Component {
       totalInterest: 0,
       totalLoan: 0
     };
-    this.state = Object.assign({}, this.initialState);
+    this.state = { ...this.initialState };
     this.handleClose = this.handleClose.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -100,7 +100,7 @@ class PaymentCalculator extends React.Component {
     const price = props.price || state.price;
     if (typeof price === 'number') {
       // const downPayment = price * 0.2;
-      return Object.assign({}, state, { price });
+      return { ...state, price };
     }
     return state;
   }
@@ -126,12 +126,13 @@ class PaymentCalculator extends React.Component {
   handleReset(e) {
     e.preventDefault();
     e.stopPropagation();
-    const state = Object.assign({}, this.initialState, {
+    const state = {
+      ...this.initialState,
       price: this.props.price || 0,
       totalFinanced: 0,
       totalLoan: 0,
       estimatedPayment: 0
-    });
+    };
     this.setState(state, () => this.recalculate());
   }
 

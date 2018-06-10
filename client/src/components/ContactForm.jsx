@@ -82,7 +82,7 @@ class ContactForm extends React.Component {
         for ${priceStr}. I'd like to get more information about this vehicle and
         confirm its availability.
         `.trim().replace(/[\n ]+/g, ' ');
-        return Object.assign({}, state, { message });
+        return { ...state, message };
       }
     }
     return state;

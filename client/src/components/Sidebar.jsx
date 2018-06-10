@@ -40,11 +40,11 @@ class Sidebar extends React.Component {
   }
 
   sendSellerEmail(data) {
-    const extra = {
+    data = {
+      ...data,
       vehicleId: this.state.vehicleId,
       sellerEmail: this.state.sellerEmail
     };
-    data = Object.assign({}, data, extra);
     axios.post('/api/seller/email', data)
       .then(res => console.log('Successfully sent email'))
       .catch(err => console.error('Error sending email:', err));
