@@ -20,13 +20,16 @@ const Wrapper = styled.div`
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalActive: false };
+    this.state = {
+      vehicleId: props.vehicleId,
+      modalActive: false
+    };
     this.sendSellerEmail = this.sendSellerEmail.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
-    this.getInfo(1);
+    this.getInfo(this.state.vehicleId);
   }
 
   getInfo(vehicleId) {
