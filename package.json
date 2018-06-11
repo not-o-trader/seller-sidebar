@@ -12,7 +12,15 @@
   },
   "jest": {
     "setupFiles": ["./client/src/__test__/testSetup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "collectCoverage": true,
+    "notify": true,
+    "verbose": true,
+    "moduleFileExtensions": [
+        "js",
+        "jsx",
+        "json"
+    ]
   },
   "keywords": [],
   "author": "",
