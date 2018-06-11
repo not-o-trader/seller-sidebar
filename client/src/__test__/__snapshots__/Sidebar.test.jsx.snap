@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sidebar /> renders 1`] = `
+<styled.div>
+  <VehiclePrice
+    toggleModal={[Function]}
+  />
+  <hr />
+  <SellerInfo />
+  <ContactForm
+    send={[Function]}
+  />
+</styled.div>
+`;

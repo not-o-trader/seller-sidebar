@@ -164,7 +164,7 @@ class PaymentCalculator extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper id="payment-calculator-modal">
         <Inner>
           <div>
             <Header>
@@ -293,8 +293,18 @@ class PaymentCalculator extends React.Component {
               lend.
             </p>
             <div>
-              <ResetButton onClick={this.handleReset}>Reset</ResetButton>
-              <CalculateButton onClick={this.handleSubmit}>Calculate</CalculateButton>
+              <ResetButton
+                id="payment-calculator-reset"
+                onClick={this.handleReset}
+              >
+                Reset
+              </ResetButton>
+              <CalculateButton
+                id="payment-calculator-submit"
+                onClick={this.handleSubmit}
+              >
+                Calculate
+              </CalculateButton>
             </div>
           </form>
         </Inner>

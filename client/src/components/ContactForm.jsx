@@ -182,7 +182,12 @@ class ContactForm extends React.Component {
                 our Visitor Agreement
               </p>
             </div>
-            <Button type="submit">Submit</Button>
+            <Button
+              type="submit"
+              id="send-seller-email"
+            >
+              Submit
+            </Button>
           </form>
         </Inner>
       </Wrapper>

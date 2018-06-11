@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SellerInfo /> renders 1`] = `
+<styled.div>
+  <styled.div>
+    <h2>
+      Dealer
+    </h2>
+    <div>
+      <styled.p>
+        5555555555
+      </styled.p>
+    </div>
+    <div>
+      <styled.div>
+        <a
+          href="https://maps.google.com/maps/place/123 Acme St, Acme, CA 12345"
+        >
+          <span
+            className="fas fa-map-marker-alt"
+          />
+        </a>
+      </styled.div>
+      <div>
+        <p>
+          <a
+            href="https://maps.google.com/maps/place/123 Acme St, Acme, CA 12345"
+          >
+            123 Acme St
+             
+            Acme
+            , 
+            CA
+             
+            12345
+          </a>
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        <a
+          href="#"
+        >
+          View our inventory
+        </a>
+      </p>
+    </div>
+    <div>
+      <p>
+        <styled.button>
+          <a
+            href="https://www.google.com"
+          >
+            Visit Dealer Website 
+            <span
+              className="fas fa-external-link-alt"
+            />
+          </a>
+        </styled.button>
+      </p>
+    </div>
+  </styled.div>
+</styled.div>
+`;

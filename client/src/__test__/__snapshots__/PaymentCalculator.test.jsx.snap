@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentCalculator /> renders 1`] = `
+<styled.div
+  id="payment-calculator-modal"
+>
+  <styled.div>
+    <div>
+      <styled.div>
+        Calculator
+        <styled.button
+          onClick={[Function]}
+        >
+          X
+        </styled.button>
+      </styled.div>
+    </div>
+    <hr />
+    <form>
+      <div>
+        <styled.div>
+          Months
+        </styled.div>
+        <div>
+          <styled.button
+            onClick={[Function]}
+            selected={false}
+            value="24"
+          >
+            24
+          </styled.button>
+          <styled.button
+            onClick={[Function]}
+            selected={false}
+            value="36"
+          >
+            36
+          </styled.button>
+          <styled.button
+            onClick={[Function]}
+            selected={false}
+            value="48"
+          >
+            48
+          </styled.button>
+          <styled.button
+            onClick={[Function]}
+            selected={true}
+            value="60"
+          >
+            60
+          </styled.button>
+          <styled.button
+            onClick={[Function]}
+            selected={false}
+            value="72"
+          >
+            72
+          </styled.button>
+        </div>
+      </div>
+      <FormInput
+        handleChange={[Function]}
+        label="Interest Rate"
+        name="interestRate"
+        type="number"
+        value={0}
+      />
+      <FormInput
+        handleChange={[Function]}
+        label="Price"
+        name="price"
+        type="number"
+        value={40000}
+      />
+      <FormInput
+        handleChange={[Function]}
+        label="Down Payment"
+        name="downPayment"
+        type="number"
+        value={0}
+      />
+      <FormInput
+        handleChange={[Function]}
+        label="Trade In Value"
+        name="tradeInValue"
+        type="number"
+        value={0}
+      />
+      <p>
+        <a
+          href="#"
+        >
+          Get your Kelly Blue Book Instant Cash Offer today
+        </a>
+      </p>
+      <FormInput
+        handleChange={[Function]}
+        label="Amount Owed on Trade"
+        name="amountOwedOnTrade"
+        type="number"
+        value={0}
+      />
+      <div>
+        <p>
+          Estimated Payment*
+        </p>
+        <p>
+          $
+          0
+           / month for 
+          60
+           at 
+          0
+          % APR.
+        </p>
+      </div>
+      <div>
+        <p>
+          Price
+        </p>
+        <styled.p>
+          $40,000.00
+        </styled.p>
+      </div>
+      <div>
+        <p>
+          Down Payment
+        </p>
+        <styled.p>
+          - 
+          $0.00
+        </styled.p>
+      </div>
+      <div>
+        <p>
+          Trade-In Value
+        </p>
+        <styled.p>
+          - 
+          $0.00
+        </styled.p>
+      </div>
+      <div>
+        <p>
+          Amount Owed on Trade
+        </p>
+        <styled.p>
+          $0.00
+        </styled.p>
+      </div>
+      <div>
+        <p>
+          Total Financed
+        </p>
+        <styled.p>
+          $0.00
+        </styled.p>
+      </div>
+      <div>
+        <p>
+          Total Interest
+        </p>
+        <styled.p>
+          $0.00
+        </styled.p>
+      </div>
+      <div>
+        <p>
+          Total Loan
+        </p>
+        <styled.p>
+          $0.00
+        </styled.p>
+      </div>
+      <p>
+        *Estimated payments are for informational purposes only and don't account for tax, title and fees or represent a guarantee of credit from the seller. Such estimates are not an offer or commitment to lend.
+      </p>
+      <div>
+        <styled.button
+          id="payment-calculator-reset"
+          onClick={[Function]}
+        >
+          Reset
+        </styled.button>
+        <styled.button
+          id="payment-calculator-submit"
+          onClick={[Function]}
+        >
+          Calculate
+        </styled.button>
+      </div>
+    </form>
+  </styled.div>
+</styled.div>
+`;

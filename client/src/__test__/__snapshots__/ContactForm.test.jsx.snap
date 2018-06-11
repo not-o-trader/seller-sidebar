@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContactForm /> renders 1`] = `
+<styled.div>
+  <styled.div>
+    <h2>
+      Email Seller
+    </h2>
+    <form
+      autoComplete="on"
+      onSubmit={[Function]}
+    >
+      <styled.label
+        htmlFor="message"
+      >
+        Message
+      </styled.label>
+      <styled.textarea
+        maxLength={250}
+        name="message"
+        onChange={[Function]}
+        placeholder="Enter your message here. Maximum 250 characters"
+        rows={8}
+        value="Hi, I'm interested in your 2016 Cadillac ATS listed on Not-O-Trader for $40,000.00. I'd like to get more information about this vehicle and confirm its availability."
+      />
+      <FormInput
+        autocomplete="given-name"
+        handleChange={[Function]}
+        label="First Name"
+        name="firstName"
+        placeholder="First Name"
+        type="text"
+        value=""
+      />
+      <FormInput
+        autocomplete="family-name"
+        handleChange={[Function]}
+        label="Last Name"
+        name="lastName"
+        placeholder="Last Name"
+        type="text"
+        value=""
+      />
+      <FormInput
+        autocomplete="email"
+        handleChange={[Function]}
+        label="Email"
+        name="emailAddress"
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+      <FormInput
+        autocomplete="tel"
+        handleChange={[Function]}
+        label="Phone Number"
+        name="phoneNumber"
+        optional="true"
+        placeholder=""
+        type="tel"
+        value=""
+      />
+      <div>
+        <styled.div>
+          <styled.input
+            name="contactCheckbox"
+            onChange={[Function]}
+            type="checkbox"
+            value={false}
+          />
+        </styled.div>
+        <div>
+          Yes, I would like to receive updates, promotions, and discounts from Not-O-Trader and their affiliates.
+        </div>
+      </div>
+      <div>
+        <p>
+          By using this service, you accept the terms of our Visitor Agreement
+        </p>
+      </div>
+      <styled.button
+        id="send-seller-email"
+        type="submit"
+      >
+        Submit
+      </styled.button>
+    </form>
+  </styled.div>
+</styled.div>
+`;

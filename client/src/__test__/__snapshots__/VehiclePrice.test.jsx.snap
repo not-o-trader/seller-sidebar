@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VehiclePrice /> renders 1`] = `
+<styled.div>
+  <h3>
+    $0.00
+  </h3>
+  <div>
+    <div>
+      <styled.div>
+        <img
+          src="KBB_Badge.png"
+        />
+      </styled.div>
+      <styled.div>
+        <a
+          href="#"
+        >
+          Is this price in the Fair Market Range?
+        </a>
+      </styled.div>
+    </div>
+    <div>
+      <p>
+        <styled.a
+          href="#"
+        >
+          $ Arrange Financing 
+          <span
+            className="fas fa-external-link-alt"
+          />
+        </styled.a>
+        <styled.a
+          href="#"
+          id="show-payment-calculator"
+          onClick={[Function]}
+        >
+          <span
+            className="fas fa-calculator"
+          />
+           Calculate payment
+        </styled.a>
+      </p>
+    </div>
+  </div>
+</styled.div>
+`;

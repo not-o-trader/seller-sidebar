@@ -51,7 +51,11 @@ class VehiclePrice extends React.Component {
           <div>
             <p>
               <FinancingLink href='#'>$ Arrange Financing <span className="fas fa-external-link-alt"></span></FinancingLink>
-              <PaymentsLink href='#' onClick={this.handleCalculatorClick}>
+              <PaymentsLink
+                href='#'
+                id="show-payment-calculator"
+                onClick={this.handleCalculatorClick}
+              >
                 <span className="fas fa-calculator"></span> Calculate payment
               </PaymentsLink>
             </p>
