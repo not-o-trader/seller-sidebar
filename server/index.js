@@ -3,7 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
-const PORT = process.env.PORT || 6000;
+require('dotenv').config();
+
+const PORT = process.env.PORT || 5500;
 
 const app = express();
 
