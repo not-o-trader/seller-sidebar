@@ -169,7 +169,12 @@ class PaymentCalculator extends React.Component {
           <div>
             <Header>
               Calculator
-              <CloseButton onClick={this.handleClose}>X</CloseButton>
+              <CloseButton
+                id="payment-calculator-modal-close"
+                onClick={this.handleClose}
+              >
+                X
+              </CloseButton>
             </Header>
           </div>
           <hr />

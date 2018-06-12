@@ -9,6 +9,7 @@ exports[`<PaymentCalculator /> renders 1`] = `
       <styled.div>
         Calculator
         <styled.button
+          id="payment-calculator-modal-close"
           onClick={[Function]}
         >
           X

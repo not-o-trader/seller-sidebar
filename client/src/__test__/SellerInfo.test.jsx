@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import SellerInfo from '../components/SellerInfo.jsx';
 
@@ -18,5 +18,15 @@ describe('<SellerInfo />', () => {
       />
     );
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('includes seller logo if available', () => {
+    const wrapper = mount(
+      <SellerInfo
+        name="some-seller"
+        logo="some-logo.jpg"
+      />
+    );
+    expect(wrapper.find('img.seller-logo').length).toBeGreaterThan(0);
   });
 });

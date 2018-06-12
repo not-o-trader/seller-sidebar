@@ -36,4 +36,19 @@ describe('<PaymentCalculator />', () => {
     wrapper.find('button#payment-calculator-reset').simulate('click');
     expect(wrapper.state().downPayment).toEqual(0.00);
   });
+
+  it('closes', () => {
+    const toggle = jest.fn();
+    jest.spyOn(PaymentCalculator.prototype, 'handleClose');
+    const wrapper = mount(
+      <PaymentCalculator
+        price={40000.00}
+        toggle={toggle}
+      />
+    );
+
+    wrapper.find('button#payment-calculator-modal-close').simulate('click');
+    expect(PaymentCalculator.prototype.handleClose).toHaveBeenCalled();
+    expect(toggle).toHaveBeenCalled();
+  });
 });

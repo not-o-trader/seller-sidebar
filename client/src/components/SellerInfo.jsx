@@ -40,7 +40,7 @@ const SellerInfo = ({ logo, name, phone, address, city, state, zip, website }) =
   return (
     <Wrapper>
       <Inner>
-        {logo && <img src={logo} alt={name} />}
+        {logo && <img className="seller-logo" src={logo} alt={name} />}
         <h2>{name}</h2>
         <div>
           <Phone>{phone}</Phone>
