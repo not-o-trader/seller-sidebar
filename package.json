@@ -11,15 +11,19 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFiles": ["./client/src/__test__/testSetup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupFiles": [
+      "./client/src/__test__/testSetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "collectCoverage": true,
     "notify": true,
     "verbose": true,
     "moduleFileExtensions": [
-        "js",
-        "jsx",
-        "json"
+      "js",
+      "jsx",
+      "json"
     ]
   },
   "keywords": [],
@@ -29,6 +33,7 @@
     "accounting": "^0.4.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
     "nodemon": "^1.17.5",
