@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6000;
 
 const app = express();
 
@@ -21,5 +21,5 @@ app.get('/api/seller/:vehicleId', sellersController.get);
 app.post('/api/seller/email', messageController.post);
 
 app.listen(PORT, () => {
-  console.log(`Listening on ${PORT}`);
+  console.log(`Listening on port ${PORT}`);
 });
