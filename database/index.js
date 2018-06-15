@@ -1,11 +1,19 @@
+const fs = require('fs');
 const pg = require('pg');
 
-const client = new pg.Client({
-  user: 'jbm',
-  database: 'autotrader'
-});
+let client = null;
 
-client.connect();
+fs.readFile("/run/secrets/postgres-password", (err, data) => {
+  if (err) { throw err; }
+  const password = data.toString().trim();
+  client = new pg.Client({
+    host: process.env.PGHOST,
+    port: process.env.PGPORT,
+    user: process.env.PGUSER,
+    password
+  });
+  client.connect();
+});
 
 const sellerInfoQuery = `
   select
