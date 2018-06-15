@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
   }
 
   getInfo(vehicleId) {
-    axios.get(`/api/seller/${vehicleId}`)
+    axios.get(`http://75.101.193.74:5500/api/seller/${vehicleId}`)
       .then(({ data }) => {
         this.setState(data);
       })
@@ -48,7 +48,7 @@ class Sidebar extends React.Component {
       vehicleId: this.state.vehicleId,
       sellerEmail: this.state.sellerEmail
     };
-    axios.post('/api/seller/email', data)
+    axios.post('http://75.101.193.74:5500/api/seller/email', data)
       .then(res => console.log('Successfully sent email'))
       .catch(err => console.error('Error sending email:', err));
   }
