@@ -42,7 +42,7 @@ class VehiclePrice extends React.Component {
         <div>
           <div>
             <KBB>
-              <img src="KBB_Badge.png" />
+              <img src="http://75.101.193.74:5500/KBB_Badge.png" />
             </KBB>
             <FMR>
               <a href='#'>Is this price in the Fair Market Range?</a>
